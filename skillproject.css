@@ -1,54 +1,84 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
-    background-color: #f9f9f9; /* สีพื้นหลัง */
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
-  input {
-    padding: 5px;
-    width: 200px;
-  }
-  
-  button {
-    padding: 5px 10px;
-    margin-left: 5px;
-    cursor: pointer;
-  }
-  
-button:hover {
-    background-color: #0056b3;
+/* กำหนดขนาดของแต่ละ Section ให้มีขนาดเท่ากัน */
+section {
+  width: 320px; /* ล็อคขนาดให้เท่ากันทุกกล่อง */
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* สีพื้นหลังของแต่ละ Section */
+.todo-section {
+  background: #e3f2fd; /* ฟ้าอ่อน */
+}
+
+.grade-section {
+  background: #ffebee; /* แดงอ่อน */
+}
+
+.api-section {
+  background: #e8f5e9; /* เขียวอ่อน */
+}
+
+.lottery-section {
+  background: #fbe9e7; /* ส้มอ่อน */
+}
+
+/* ปรับ input และ button */
 input {
-    padding: 8px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: 85%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* สไตล์ของรายการ To-Do */
 ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 li {
-    display: flex;
-    justify-content: space-between;
-    width: 250px;
-    margin: 10px auto;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  margin: 8px auto;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 
+/* สไตล์ของ Lottery */
 #lottery-number {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ff5722;
+  font-size: 22px;
+  font-weight: bold;
+  color: #d84315;
 }
