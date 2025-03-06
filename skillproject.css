@@ -1,66 +1,82 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   margin: 20px;
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: #f0f2f5;
+  color: rgb(218, 115, 133);
 }
 
 h1 {
-  font-size: 22px;
-  margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: rgb(203, 91, 112);
 }
 
-/* กำหนดขนาดของแต่ละ Section ให้มีขนาดเท่ากัน */
+/* ปรับปรุง Section ให้ดูมีมิติ */
 section {
-  width: 320px; /* ล็อคขนาดให้เท่ากันทุกกล่อง */
+  width: 90%;
+  max-width: 350px;
   margin: 20px auto;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-/* สีพื้นหลังของแต่ละ Section */
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* สีพื้นหลังที่นุ่มนวลขึ้น */
 .todo-section {
-  background: #e3f2fd; /* ฟ้าอ่อน */
+  background: #e3f2fd;
 }
 
 .grade-section {
-  background: #ffebee; /* แดงอ่อน */
+  background: #ffebee;
 }
 
 .api-section {
-  background: #e8f5e9; /* เขียวอ่อน */
+  background: #e8f5e9;
 }
 
 .lottery-section {
-  background: #fbe9e7; /* ส้มอ่อน */
+  background: #fbe9e7;
 }
 
-/* ปรับ input และ button */
+/* ปรับ input & button */
 input {
-  width: 85%;
-  padding: 8px;
-  margin: 8px 0;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
   border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  background: #007bff;
-  color: white;
-  cursor: pointer;
+  border-radius: 6px;
   font-size: 14px;
 }
 
-button:hover {
-  background: #0056b3;
+/* ปรับปุ่มให้สวยขึ้น */
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(to right, #ff6b81, #ff94a1);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.1s ease;
 }
 
-/* สไตล์ของรายการ To-Do */
+button:hover {
+  background: linear-gradient(to right, #ff5c72, #ff8197);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* ปรับสไตล์รายการ To-Do */
 ul {
   list-style: none;
   padding: 0;
@@ -70,15 +86,21 @@ li {
   display: flex;
   justify-content: space-between;
   background: white;
-  margin: 8px auto;
-  padding: 8px;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
-/* สไตล์ของ Lottery */
+li:hover {
+  transform: scale(1.02);
+}
+
+/* ปรับตัวเลข Lottery ให้โดดเด่น */
 #lottery-number {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: bold;
-  color: #d84315;
+  color: rgb(213, 102, 120);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }

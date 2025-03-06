@@ -43,24 +43,47 @@ const loadTodos = () => {
 };
 
 // 2) Student Grade Calculator
+const validateScore = (input) => {
+  let score = parseFloat(input.value);
+  let errorSpan = input.nextElementSibling; // ค้นหา <span> ถัดจาก input
+
+  if (score < 0 || score > 100 || isNaN(score)) {
+    errorSpan.textContent = "กรุณากรอกคะแนนระหว่าง 0-100";
+    errorSpan.style.color = "red";
+    input.style.borderColor = "red";
+  } else {
+    errorSpan.textContent = ""; // ลบข้อความแจ้งเตือน
+    input.style.borderColor = ""; // คืนค่าขอบ input เป็นปกติ
+  }
+};
+
 const calculateGPA = () => {
   const subjects = ["CSI101", "CSI102", "CSI203", "CSI204", "CSI305"];
-  let totalPoints = 0; //คะแนนรวม
-  let totalCredits = 0; //หน่วยกิตรวม
+  let totalPoints = 0;
+  let totalCredits = 0;
+
   subjects.forEach((sub) => {
-    const score = parseFloat(document.getElementById(sub).value) || 0; //ดึงค่าคะแนนจาก input
+    let input = document.getElementById(sub);
+    let score = parseFloat(input.value) || 0;
+
+    if (score < 0 || score > 100 || isNaN(score)) {
+      return; // ข้ามค่าที่ผิดพลาด
+    }
+
     let gradePoint =
-      score >= 80 ? 4 : //A
-      score >= 70 ? 3 : //B
-      score >= 60 ? 2 : //C
-      score >= 50 ? 1 : //D
-      0;                //F
-    totalPoints += gradePoint * 3; //คะแนน x หน่วยกิต (แต่ละวิชามี 3 หน่วยกิต) สมมุติ totalPoints = 12 + 9 + 6 + 0 + 12 = 39
-    totalCredits += 3;  // เพิ่มหน่วยกิตรวม totalCredits = 3 + 3 + 3 + 3 + 3 = 15
+      score >= 80 ? 4 :
+      score >= 70 ? 3 :
+      score >= 60 ? 2 :
+      score >= 50 ? 1 :
+      0;
+
+    totalPoints += gradePoint * 3;
+    totalCredits += 3;
   });
-  document.getElementById("gpa-result").textContent = `GPA: ${(
-    totalPoints / totalCredits //GPA = 39 / 15 = 2.60
-  ).toFixed(2)}`; 
+
+  if (totalCredits > 0) {
+    document.getElementById("gpa-result").textContent = `GPA: ${(totalPoints / totalCredits).toFixed(2)}`;
+  }
 };
 
 // 3) Simple API Data Fetching

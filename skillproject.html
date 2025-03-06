@@ -15,19 +15,19 @@
 
     <h1>Student Grade Calculator</h1>
     <div id="grade-form">
-      <input id="CSI101" type="number" placeholder="คะแนน CSI101" />
+      <input id="CSI101" type="number" placeholder="คะแนน CSI101" oninput="validateScore(this)"><span class="error-message" />
     </div>
     <div id="grade-form">
-      <input id="CSI102" type="number" placeholder="คะแนน CSI102" />
+      <input id="CSI102" type="number" placeholder="คะแนน CSI102" oninput="validateScore(this)"><span class="error-message" />
     </div>
     <div id="grade-form">
-      <input id="CSI203" type="number" placeholder="คะแนน CSI203" />
+      <input id="CSI203" type="number" placeholder="คะแนน CSI203" oninput="validateScore(this)"><span class="error-message" />
     </div>
     <div id="grade-form">
-      <input id="CSI204" type="number" placeholder="คะแนน CSI204" />
+      <input id="CSI204" type="number" placeholder="คะแนน CSI204" oninput="validateScore(this)"><span class="error-message" />
     </div>
     <div id="grade-form">
-      <input id="CSI305" type="number" placeholder="คะแนน CSI305" />
+      <input id="CSI305" type="number" placeholder="คะแนน CSI305" oninput="validateScore(this)"><span class="error-message" />
     </div>
   <button onclick="calculateGPA()">คำนวณ</button>
   <p id="gpa-result"></p>
